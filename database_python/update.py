@@ -5,7 +5,7 @@ db_name = "pythonTestDB";
 my_connection = mysql.connector.connect(
 	host="localhost",
 	user="root",
-	passwd="amin@5078",
+	passwd="*****",
 	database="pythonTestDB"
 );
 

@@ -4,7 +4,7 @@ import mysql.connector;
 my_connection = mysql.connector.connect(
 	host="localhost",
 	user="root",
-	passwd="amin@5078"
+	passwd="*****"
 );
 
 my_cursor = my_connection.cursor();
@@ -83,56 +83,3 @@ my_connection.commit();
 
 
 print("Everything done successfully");
-
-# #include <bits/stdc++.h>
-# using namespace std;
-
-# int main() {
-# 	// your code goes here
-#     int n;
-#     cin >> n;
-    
-#     string t;
-#     cin >> t;
-    
-#     bool flag = true;
-#     if (n % 2 == 1)
-#     {
-#         int one = ((n + 1) / 2) - 1;
-#         for (int i = 0; i < one; i++)
-#         {
-#             if (t[i] != '1')
-#             {
-#                 flag = false;
-#                 break;
-#             }
-#         }
-        
-        
-#         int slash = ((n + 1) / 2);
-#         if (t[slash - 1] != '/')
-#         {
-#             flag = false;
-#         }
-        
-#         int two = ((n + 1) / 2) + 1;
-#         for (int i = two - 1; i < n; i++)
-#         {
-#             if (t[i] != '2')
-#             {
-#                 flag = false;
-#                 break;
-#             }
-#         }
-#     }
-#     else 
-#     {
-#         flag = false;
-#     }
-    
-#     if (flag) cout << "Yes" << "\n";
-#     else cout << "No" << "\n";
-    
-
-#     return 0;
-# }
