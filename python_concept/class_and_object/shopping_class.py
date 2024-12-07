@@ -26,7 +26,6 @@ class Shopping:
 		for item in self.cart:
 			if item_name == item["item"]:
 				self.cart.remove(item)
-			print(item)
 
 
 messi = Shopping("messi")
@@ -37,4 +36,7 @@ messi.add_to_cart("shorts", 1100, 5)
 
 # messi.checkout(25000)
 
-messi.remove_item("ball")
+messi.remove_item("shorts")
+
+for item in messi.cart:
+	print(item)
