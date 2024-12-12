@@ -21,3 +21,5 @@ class Computer:
 
 
 hp = Computer(8, 16, 512)
+
+print(hp.cpu())

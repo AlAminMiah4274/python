@@ -1,0 +1,12 @@
+
+
+1. method overriding, method overloading, operator overloading 
+2. static attribute, class method, static method, @staticmethod and @classmethod decorator 
+3. getter, setter, @property decorator 
+4. inner and wrapper function 
+4. How does decorator work
+5. composition, inheritance vs composition 
+6. UML diagram
+7. Design Patterns
+9. Architectural patterns 
+
