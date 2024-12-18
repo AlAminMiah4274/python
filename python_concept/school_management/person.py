@@ -8,6 +8,7 @@ class Person:
 
 
 
+
 class Teacher(Person):
 	def __init__(self, name):
 		super().__init__(name)
@@ -28,14 +29,21 @@ class Student(Person):
 		self.grade = None  # final grade 
 
 
-	def final_grade(self):
+	def calculate_final_grade(self):
 		sum = 0
 		for grade in self.subject_grade.values():
-			point = School.value_to_grade(grade)	# 5.00
+			point = School.grade_to_value(grade)	# 5.00
 			sum += point
 
-		gpa = sum / len(self.subject_grade)		# 7/3 = 3.50
-		self.grade = School.grade_to_value(gpa)
+		if sum == 0:
+			gpa = 0.00
+			self.grade = "F"
+			return f"{self.name}'s' Final grade: {self.grade} with GPA = {gpa}"
+		else:
+			gpa = sum / len(self.subject_grade)		# 7/3 = 3.50
+			self.grade = School.value_to_grade(gpa)
+
+			return f"{self.name}'s' Final grade: {self.grade} with GPA = {gpa}"
 
 
 	# rahim.id ==
