@@ -3,15 +3,15 @@ from vehicle import Car, Bike
 
 
 class Ride:
-	def __init__(self, start_location, end_location, vehicle_type):
-		self.start_location = end_location
+	def __init__(self, start_location, end_location, vehicle):
+		self.start_location = start_location
 		self.end_location = end_location
 		self.rider = None
 		self.driver = None
 		self.start_time = None
 		self.end_time = None
-		self.estimated_fare = self.calculate_fare(vehicle_type)
-		self.vehicle_type = vehicle_type
+		self.estimated_fare = self.calculate_fare(vehicle.vehicle_type)
+		self.vehicle_type = vehicle.vehicle_type
 
 
 	def set_driver(self, driver):
@@ -28,7 +28,7 @@ class Ride:
 		self.driver.wallet += self.estimated_fare
 
 
-	def calculate_fare(self, vehicle):
+	def calculate_fare(self, vehicle_type):
 		distance = 10
 
 		fare_per_km = {
@@ -37,7 +37,7 @@ class Ride:
 			"cng": 25
 		}
 
-		return distance * fare_per_km.get(vehicle)
+		return distance * fare_per_km.get(vehicle_type)
 
 
 	def __repr__(self):
@@ -67,8 +67,8 @@ class RideMatching:
 				vehicle = Car("car", "1254BCD", 500)
 			elif vehicle_type == "bike":
 				vehicle = Bike("bike", "4781ABD", 420)
-
 			ride = Ride(ride_request.rider.current_location, ride_request.end_location, vehicle)
+			
 			driver.accept_ride(ride)
 
 			return ride
